@@ -27,13 +27,13 @@
           <a-text value=“ミャクミャク" position=" -2 0 1″ scale=“2 2 2" rotation=“-90 0 0" color=“#0000ff">
           </a-text>
           <!–画像を表示させたい時は下の行が必要–>
-         <a-image
-           src=“ARmyak.obj"
-           position=“0 -2 0"
-           rotation=“-90 0 0"
-           scale=“2 2 2"
-           class=“clickable"
-          ></a-image>
+          <a-assets>
+          <a-asset-item id="3DModel" src=“ARmyak.obj"></a-asset-item>
+          </a-assets>
+     <a-ogj-model src="#3DMdel"
+                  scale="1 1 1"
+                  postion="1 1 1">
+      </a-ogj-model>
       </a-marker>
       <a-entity camera></a-entity>
     </a-scene>
