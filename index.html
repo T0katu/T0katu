@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,intial-scale=1.0" />
+        <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+        <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+        <title>WebARtest</title>
+    </head>
+    <body style="margin:0px; overflow:hidden;">
+        <a-scene embedded arjs="bedugUIEnablend:false;">
+            <a-assets>
+                <a-asset-item id="obj" src="ARmyak.obj"></a-asset-item>
+            </a-assets>
+
+            <a-marker type="pattern" url="pattern-M.patt">
+                <a-entity gitf-model="#ARmyak"></a-entity>
+            </a-marker>
+           <a-entity camera></a-entity>
+        </a-scene>
+    </body>
+</html>
+    
