@@ -1,32 +1,74 @@
 <!DOCTYPE html>
-<html lang="ja">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- A-Frame を読み込む -->
-    <script src="https://aframe.io/releases/0.6.1/aframe.min.js"></script>
-    <!-- AR.js を読み込む -->
-    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
-    <script src=“https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
-    <script src=“https://cdn.rawgit.com/jeromeetienne/AR.js/1.6.2/aframe/build/aframe-ar.js"> </script>
-    <title>1508</title>
-  </head>
-  <body style="margin: 0; overflow: hidden">
-    <a-scene embedded arjs vr-mode-ui="enabled: false;">
-	    
-      <!-- 3DCGモデルを読み込む -->
-      <a-assets>
-        <a-asset-item id="myak" src="ARmyak.glb"></a-asset-item>
-      </a-assets>
+<html>
 
-      <!-- マーカーの.pattファイルを読み込む -->
-      <a-marker type="pattern" url="pattern-M.patt">
-        <!-- 3Dモデルを呼び出す -->
-        <a-entity gltf-model="#myak"></a-entity>
-      </a-marker>
+<head>
 
-      <!-- カメラを追加 -->
-      <a-entity camera></a-entity>
-    </a-scene>
-  </body>
+<meta charset=”utf-8″>
+
+<meta name=”viewport” content=”width=device-width,intial-scale=1″>
+
+<title>WebARv1</title>
+
+</head>
+
+<body style=”margin:0px; overflow:hidden;”>
+
+<!– 新規追加 ここから–>
+
+<!– AFrameライブラリ読み込み –>
+
+<script src=”https://aframe.io/releases/0.6.1/aframe.min.js”></script>
+
+<!– AR.jsライブラリ読み込み –>
+
+<script src=”https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js”></script>
+
+<!– AFrameにAR.js紐付け –>
+
+<a-scene embedded arjs=”debugUIEnabled:false;”>
+
+<!– 3Dモデルの用意 –>
+
+<a-assets>
+
+<!– 3Dモデル –>
+
+<a-asset-item id=”3DModel” src=”ARmyak.obj”></a-asset-item>
+
+<!– マテリアル –>
+
+<a-asset-item id=”Material” src=”ARmyak.mtl”></a-asset-item>
+
+</a-assets>
+
+<!– マーカー登録(デフォルトで用意されている『Hiro』マーカー) –>
+
+<a-marker type="pattern" url="pattern-M.patt">
+
+<!– マーカーの位置に3Dモデルを配置 サイズと場所を指定–>
+
+<a-obj-model src=”#3DModel”
+
+mtl=”#Material”
+
+scale=”0.005 0.005 0.005″
+
+position=”0 0.5 0″>
+
+</a-obj-model>
+
+</a-marker>
+
+<!– AR用のカメラ配置 –>
+
+<a-entity camera></a-entity>
+
+</a-scene>
+
+<!– A-Frame終了 –>
+
+<!–新規追加 ここまで–>
+
+</body>
+
 </html>
