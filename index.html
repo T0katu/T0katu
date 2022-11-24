@@ -5,10 +5,11 @@
   <body style="margin: 0px; overflow: hidden;">
     <a-scene embedded arjs>
       <a-assets>
-        <a-asset-item id="myak" src="ARmyak.glb"></a-asset-item>
+        <a-asset-item id="obj" src="ARmyak.obj"></a-asset-item>   <!-- objファイル -->
+        <a-asset-item id="mtl" src="ARmyak.mtl"></a-asset-item>   <!-- mtlファイル -->
       </a-assets>
       <a-marker type="pattern" url="pattern-M.patt">
-        <a-entity gltf-model="#myak"></a-entity>
+        <a-obj-model src="#obj" mtl="#mtl" ></a-obj-model>
       </a-marker>
       <a-entity camera></a-entity>
     </a-scene>
